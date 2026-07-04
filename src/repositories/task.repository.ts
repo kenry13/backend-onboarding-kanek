@@ -18,5 +18,8 @@ export const taskRepository = {
     tasks.push(newTask)
     return newTask
   },
-  findAll: (): Task[] => tasks
+  findAll: (): Task[] => tasks,
+  findById: (id: number): Task | undefined => {
+    return tasks.find((task) => task.id === id)
+  }
 }
